@@ -1,0 +1,30 @@
+body {
+	background-image:url(https://etapes.com/app/uploads/2019/08/MeanderingRiver01_detail01.jpg); 
+	
+	}
+
+h1 {
+	font-family: cursive;
+	margin: 10px;
+	text-align:center;
+	color: aqua ;
+}
+div {
+	color: lightblue;
+	font-size: 20px;
+	margin-top:20px;
+	text-align: center;
+}
+.game {
+	color: lightblue;
+	font-size:30px;
+	font-family: "Gill Sans", sans-serif;
+	margin-top:10px;
+	text-align: center;
+
+}
+button {
+ 	margin-top: 20px;
+ 	background-color: pink;
+ 	color: blue;
+}
