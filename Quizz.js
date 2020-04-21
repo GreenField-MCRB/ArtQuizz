@@ -94,20 +94,22 @@ var quizContainer = document.getElementById('quiz');
 var quizImage=document.getElementById('image');
 var quizAnswer=document.getElementById('submit');
 var result=document.getElementById("result")
+var answers=document.getElementById("answers")
 $('#submit').hide()
 
 function display(object){
 
 	$("#quiz").append("<img src="+object.image+">"+"<br>");
-	$("img").css("width","50%");
+	$("img").css("width","40%");
 	$("#quiz").append('<p>'+object.question+'</p>')
 	var question1=object.answers.a
 	var question2=object.answers.b
 	var question3=object.answers.c
-	$('#quiz').append('<input type="radio"'+'name=test class="radio" id='+question1+'value=' + question1 +'>'+'<label for='+question1+'>'+question1+'</label><br>')
-	$('#quiz').append('<input type="radio"'+'name=test class="radio" id='+question2+'value=' + question2 +'>'+'<label for='+question2+'>'+question2+'</label><br>')
-	$('#quiz').append('<input type="radio"'+'name=test class="radio" id='+question3+'value=' + question3 +'>'+'<label for='+question3+'>'+question3+'</label><br>')
-	console.log($("label[for].radio:checked"))
+
+	$('#answers').append('<label><input type="radio"'+'name=test class="radio" id='+question1+' value=' + question1 +'>'+question1+'</label><br>')
+	$('#answers').append('<label><input type="radio"'+'name=test class="radio" id='+question2+' value:' + question2 +'>'+question2+'</label><br>')
+	$('#answers').append('<label><input type="radio"'+'name=test class="radio" id='+question3+' value=' + question3 +'>'+question3+'</label><br>')
+
 		
 }
 
@@ -117,8 +119,8 @@ var score=0
  function game(array){
  		display(questions[count])
  		$('#submit').on("click",function(){
- 					var value =$("input[id]:checked")
- 					if(value.length===0){
+ 					var value = $("input[name='test']:checked").parent().text()
+ 					 if(value===''){
  						alert('choose an answer please')
  					}else{
  					console.log(value)
@@ -128,11 +130,13 @@ var score=0
  						score++
  					}
  				$('#quiz').html('')
+ 				$('#answers').html('')
  				count++
  				if (count===9){
  					$('#quiz').html('')
+ 					$('#answers').html('')
  					$('#submit').hide()
- 					$("#result").append('<div>'+'your Score is:'+score+'</div>')
+ 					$("#result").append('<div>'+'Your Score is:'+score+'</div>')
  					
  				}
  				console.log(count)
