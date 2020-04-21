@@ -10,6 +10,10 @@ h1 {
 	color: aqua ;
 }
 div {
+	text-align: center;
+	margin-top:20px;
+}
+.ready{
 	color: lightblue;
 	font-size: 20px;
 	margin-top:20px;
@@ -28,16 +32,21 @@ div {
  	background-color: pink;
  	color: blue;
 }
-.question {
-	margin: 20px;
-	background-color: white;
-	font-size: 10px
-}
+
 img {
 	width: 50%;
 	text-align:center;
 }
-.quiz {
+#quiz {
+	color: lightblue;
+	margin: 20px
+	font-size: 30px;
 	text-align: center;
 
+}
+#result{
+	color: lightblue;
+	margin: 20px
+	font-size: 50px;
+	text-align: center;
 }
