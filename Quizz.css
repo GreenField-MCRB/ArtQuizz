@@ -23,7 +23,7 @@ div {
 	text-align: center;
 
 }
-button {
+#start {
  	margin-top: 20px;
  	background-color: pink;
  	color: blue;
@@ -32,4 +32,12 @@ button {
 	margin: 20px;
 	background-color: white;
 	font-size: 10px
+}
+img {
+	width: 50%;
+	text-align:center;
+}
+.quiz {
+	text-align: center;
+
 }

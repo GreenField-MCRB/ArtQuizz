@@ -3,24 +3,18 @@
 <head>
 	<h1>Welcome to Art-Quizz</h1>
 	<link rel="stylesheet" type="text/css" href="Quizz.css">
-	<script src="Users/macbookpro/Desktop/Hacking/Project/Quizz.js"></script>
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
 <body>
 <div class="game">This is a quizz to test your knowledge in Art</div>
 <div>Are you ready ?</div>
-<center><button>Let's start!</button></center>
+<center><button id="start">Let's start!</button></center>
 
 <div id="quiz"></div>
 <div id="result"></div>
-<button id="submit">Get Result</button>
+<center><button id="submit"></button></center>
 
-
-<script src="http://code.jquery.com/jquery-3.2.1.min.js">
-	$(document).ready(function(){
-		$("button").on("click",displayQuiz())
-	})
-	
-</script>
-
+	<script src="Quizz.js"></script>
 </body>
 </html>

@@ -70,7 +70,7 @@ var questions =[{
 },
 	{
 	image:"https://tourisme.euskadi.eus/contenidos/d_destinos_turisticos/0000004981_d2_rec_turismo/fr_4981/images/PT_cabecerabilbaoguggen1024.jpg",
-	question:"to which movement belongs the building ?",
+	question:"to which movement belongs the design of this building ?",
 	answers:{
 		a:"Modernism",
 		b:"Deconstructivism",
@@ -94,50 +94,33 @@ var quizContainer = document.getElementById('quiz');
 var quizImage=document.getElementById('image');
 var quizAnswer=document.getElementById('submit');
 var result=document.getElementById("result")
+$('#submit').hide()
 
-//  we’ll need a way to build a quiz, show results, and put it all together. We can start by laying out our functions, and we’ll fill them in as we go:
-function displayQuiz(questions){
-	var output=[]
-	var answer =[];
-	for (var i=0;i<questions.length;i++){
-		for(var key in questions[i].answers){
-			answer.push(
-				'<label>'
-					+ '<input type="radio" name="question'+i+'"value="'+key+'">'
-					+ key + ': '
-					+ questions[i].answers[key]
-				+ '</label>'
-				);
-			output.push('<div class="imageQuestion">' + questions[i].image + '</div>'
-			+
-			'<div class="question">' + questions[i].question + '</div>'
-			+ '<div class="answers">' + answer.join('') + '</div>'
-		);
-		
-		}
-	}
-	quizContainer.innerHTML = output.join('');
+function display(object){
+	$("#quiz").append("<img src="+object.image+">"+"<br>");
+	$("img").css("width","50%");
+	var question=object.answers
+	$("#quiz").append('<p>'+object.question+'</p>'+'<div><input type="radio"'+'id='+question.a+'name="question"'+'value='+question.a+'<label for='+question.a+">"+question.a+'</label></div>'+'<div><input type="radio"'+'id='+question.b+'name="question"'+'value='+question.b+'<label for='+question.b+">"+question.b+'</label></div>'+
+	'<div><input type="radio"'+'id='+question.c+'name="question"'+'value='+question.c+'<label for='+question.c+">"+question.c+'</label></div>')
+	$('#submit').append('<button>'+'Go next'+'</button>')
+
 }
+var count =0
+ function game(array){
+ 		display(questions[count]);
+ 		$('#submit').on("click",function(){
+ 				$('#quiz').fadeOut()
+ 				count++
+ 				$('#quiz').fadeIn()
 
-function showResults(){
-	var answerContainers = quizContainer.querySelectorAll('.answers');
-	var userAnswer = '';
-	var score = 0;
-	for(var i=0; i<questions.length; i++){
-		userAnswer = (answerContainers[i].querySelector()||{}).value;
-		if(userAnswer===questions[i].correctAnswer){
-			score++
-		}
-	}
-	resultsContainer.innerHTML = score + ' out of ' + questions.length;
-}
+ 			})
+ 	}
 
-i
+$('#start').on("click",function(){
+	$('#submit').toggle()
+	$('#start').fadeOut()
+	game(questions)
+})	
 
-submitButton.onclick = function(){
-	showResults(questions, quizContainer, resultsContainer);
-}
-
-submitButton.addEventListener('click', showResults);
 
 
