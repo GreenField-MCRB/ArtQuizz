@@ -97,6 +97,7 @@ var result=document.getElementById("result")
 $('#submit').hide()
 
 function display(object){
+
 	$("#quiz").append("<img src="+object.image+">"+"<br>");
 	$("img").css("width","50%");
 	$("#quiz").append('<p>'+object.question+'</p>')
@@ -106,26 +107,38 @@ function display(object){
 	$('#quiz').append('<input type="radio"'+'name=test class="radio" id='+question1+'value=' + question1 +'>'+'<label for='+question1+'>'+question1+'</label><br>')
 	$('#quiz').append('<input type="radio"'+'name=test class="radio" id='+question2+'value=' + question2 +'>'+'<label for='+question2+'>'+question2+'</label><br>')
 	$('#quiz').append('<input type="radio"'+'name=test class="radio" id='+question3+'value=' + question3 +'>'+'<label for='+question3+'>'+question3+'</label><br>')
-
+	console.log($("label[for].radio:checked"))
+		
 }
+
 var count =0
-var result=0
+var score=0
 
  function game(array){
  		display(questions[count])
- 		$('#submit').on("click",function(){	
+ 		$('#submit').on("click",function(){
+ 					var value =$("input[id]:checked")
+ 					if(value.length===0){
+ 						alert('choose an answer please')
+ 					}else{
+ 					console.log(value)
+ 					var correctAnswer=questions[count].correctAnswer
+ 					console.log(correctAnswer)
+ 					if (correctAnswer===value){
+ 						score++
+ 					}
  				$('#quiz').html('')
  				count++
- 				display(questions[count])
  				if (count===9){
+ 					$('#quiz').html('')
  					$('#submit').hide()
- 					$("#result").append('<div>'+'here is your result:'+result+'</div>')
+ 					$("#result").append('<div>'+'your Score is:'+score+'</div>')
  					
  				}
-
+ 				console.log(count)
+ 				display(questions[count])
+ 			}
  			})
-
-
  	}
 
 $('#start').on("click",function(){

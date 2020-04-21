@@ -11,6 +11,7 @@ h1 {
 }
 div {
 	text-align: center;
+	margin: 20px;
 	margin-top:20px;
 }
 .ready{
@@ -34,19 +35,20 @@ div {
 }
 
 img {
-	width: 50%;
+	width: 30%;
 	text-align:center;
 }
 #quiz {
 	color: lightblue;
-	margin: 20px
+	margin: 30px
 	font-size: 30px;
 	text-align: center;
 
 }
 #result{
-	color: lightblue;
-	margin: 20px
-	font-size: 50px;
+	background-color:lightblue;
+	color: black;
+	margin: 50px;
+	font-size:50px;
 	text-align: center;
 }
