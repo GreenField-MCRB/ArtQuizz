@@ -29,7 +29,7 @@ var questions =[{
 	correctAnswer:"Starry Night"
 },
 	{
-	image:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+	image:"https://www.histoire-pour-tous.fr/images/articles/dossiers/arts/la-joconde-portrait-de-monna-lisa-de-vinci-grand.jpg",
 	question:"Everyone knows The Joconde but do you know to which movement belongs this masterpiece ?",
 	answers:{
 		a:"Expressionism",
@@ -100,7 +100,7 @@ $('#submit').hide()
 function display(object){
 
 	$("#quiz").append("<img src="+object.image+">"+"<br>");
-	$("img").css("width","40%");
+	$("img").css("width","30%");
 	$("#quiz").append('<p>'+object.question+'</p>')
 	var question1=object.answers.a
 	var question2=object.answers.b
@@ -136,7 +136,8 @@ var score=0
  					$('#quiz').html('')
  					$('#answers').html('')
  					$('#submit').hide()
- 					$("#result").append('<div>'+'Your Score is:'+score+'</div>')
+ 					$("#result").append('<div>'+'Your Score is:'+score+'/9'+'</div>')
+ 				
  					
  				}
  				console.log(count)
